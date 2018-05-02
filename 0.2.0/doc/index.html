@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="theme/face/face.css">
+<meta name="keywords" content="">
+<meta name="description" content="文档">
+<title>文档</title>
+</head>
+<body>
+<div class="face-one-head">
+    <a class="face-one-head-logo" href="../index.html">
+        <img src="theme/media/logo.svg" alt="" class="face-one-head-logo-photo" />
+        face-position
+    </a>
+    <span class="face-one-head-slogan">
+        Write less code, do more things!
+    </span>
+    <!-- <div class="face-one-head-search">
+        <span class="face-one-head-search-icon fi fi-search"></span>
+        <input type="text" class="face-one-head-search-input" placeholder="搜索..." />
+    </div> -->
+    <div class="face-one-head-nav">
+        <span class="face-one-head-nav-switch fi fi-bars"></span>
+        <div class="face-one-head-nav-F-cnt">
+            <a href="../index.html" class="face-one-head-nav-link">首页</a>
+            <a href="intro.html" class="face-one-head-nav-link">指引</a>
+            <a href="index.html" class="face-one-head-nav-link">文档</a>
+        </div>
+        <script>
+        Array.from(document.querySelectorAll('.face-one-head-nav-link')).forEach(function (node) {
+            if (node.href) {
+                var pathname = node.href.replace(/\?.*/, '')
+                if (pathname === location.origin + location.pathname) {
+                    node.setAttribute('class', node.getAttribute('class') + ' ' + 'face-one-head-nav-link--on')
+                }
+            }
+        })
+        </script>
+    </div>
+</div>
+
+<div class="face-one-layout">
+<div class="face-one-layout-F-line">
+<div class="face-one-layout-sidebar">
+<div class="face-one-nav">
+<span class="face-one-nav-switch fi fi-angle-double-right"></span>
+<div class="face-one-nav-F-inner">
+<div class="face-one-nav-item">
+    <a href="intro.html" class="face-one-nav-item-label">指引</a>
+</div>
+<div class="face-one-nav-item">
+    <a href="index.html" class="face-one-nav-item-label">文档</a>
+</div>
+<!-- face-one-nav-item--group-on 控制默认展开 -->
+<!-- <div class="face-one-nav-item face-one-nav-item--group face-one-nav-item--group-on">
+    <span class="face-one-nav-item-switch fi fi-down"></span>
+    <span class="face-one-nav-item-label">
+        文档
+    </span>
+    <div class="face-one-nav-item-group">
+        <div class="face-one-nav-item-group-title">示例</div>
+        <a href="index.html#style" class="face-one-nav-item-group-item">颜色</a>
+        <a href="index.html#border" class="face-one-nav-item-group-item">边框</a>
+    </div>
+    <div class="face-one-nav-item-group">
+        <div class="face-one-nav-item-group-title">自定义界面</div>
+        <a href="index.html#less" class="face-one-nav-item-group-item">less</a>
+    </div>
+</div> -->
+
+</div>
+</div>
+</div>
+<div class="face-one-layout-cnt">
+<div id="face-one-cnt" class="face-one-cnt markdown-body">
+<div id="face-one-sidebar" class="face-one-sidebar"></div>
+<h1 id="文档" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/position/#文档"><span class="markrun-anchor-link"></span></a>文档</h1><h2 id="对齐定位" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/position/#对齐定位"><span class="markrun-anchor-link"></span></a>对齐定位</h2><div class="markrun markrun--html">
+<div class="markrun-html"></div>
+<div class="markrun-code">
+<div class="wrap" id="wrap1" >
+    <div class="targetWrap">
+        <br />
+        <div id="target1" class="target"  ></div>    
+        <div style="width:600px;height:600px;overflow:hidded;background-color:rgba(1,1,1,.1);" ></div>
+    </div>
+    <div id="el1" class="el" ></div>
+</div>
+<form id="set">
+<textarea class="options" id="options">{
+    "baseOn":{
+        "el": "left top",
+        "target": "left top"
+    }
+}</textarea>
+<button type="submit" >Set</button>
+</form></div>
+<div class="markrun-source">
+<pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"wrap"</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"wrap1"</span> &gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"targetWrap"</span>&gt;
+        &lt;br /&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"target1"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"target"</span>  &gt;&lt;/<span class="hljs-keyword">div</span>&gt;    
+        &lt;<span class="hljs-keyword">div</span> style=<span class="hljs-string">"width:600px;height:600px;overflow:hidded;background-color:rgba(1,1,1,.1);"</span> &gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"el1"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"el"</span> &gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;form <span class="hljs-built_in">id</span>=<span class="hljs-string">"set"</span>&gt;
+&lt;textarea <span class="hljs-built_in">class</span>=<span class="hljs-string">"options"</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"options"</span>&gt;{
+    <span class="hljs-string">"baseOn"</span>:{
+        <span class="hljs-string">"el"</span>: <span class="hljs-string">"left top"</span>,
+        <span class="hljs-string">"target"</span>: <span class="hljs-string">"left top"</span>
+    }
+}&lt;/textarea&gt;
+&lt;button type=<span class="hljs-string">"submit"</span> &gt;Set&lt;/button&gt;
+&lt;/form&gt;
+</code></pre></div>
+</div>
+<div class="markrun markrun--css">
+<div class="markrun-html"></div>
+<div class="markrun-code">
+<style>
+.wrap {
+    width:200px;
+    height:200px;
+    border:1px solid #ABCDEF;
+    border-width: 1px 2px 3px 4px;
+    position:relative;
+    overflow-y: auto;
+}
+.targetWrap {
+    padding:50px;position:relative;
+}
+.target {
+    width:100px;height:100px;background-color:skyblue;
+    border:1px solid pink;
+    border-width: 1px 2px 3px 4px;
+}
+.el {
+    width:20px;height:20px;background-color:purple;
+    /* useCssTransform */
+    transition: transform .3s;
+}
+.options{font-size:12px;height:8em;width:20em;}</style>
+</div>
+<div class="markrun-source">
+<pre><code class="lang-css"><span class="hljs-selector-class">.wrap</span> {
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#ABCDEF</span>;
+    <span class="hljs-attribute">border-width</span>: <span class="hljs-number">1px</span> <span class="hljs-number">2px</span> <span class="hljs-number">3px</span> <span class="hljs-number">4px</span>;
+    <span class="hljs-attribute">position</span>:relative;
+    <span class="hljs-attribute">overflow-y</span>: auto;
+}
+<span class="hljs-selector-class">.targetWrap</span> {
+    <span class="hljs-attribute">padding</span>:<span class="hljs-number">50px</span>;<span class="hljs-attribute">position</span>:relative;
+}
+<span class="hljs-selector-class">.target</span> {
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">100px</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">100px</span>;<span class="hljs-attribute">background-color</span>:skyblue;
+    <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid pink;
+    <span class="hljs-attribute">border-width</span>: <span class="hljs-number">1px</span> <span class="hljs-number">2px</span> <span class="hljs-number">3px</span> <span class="hljs-number">4px</span>;
+}
+<span class="hljs-selector-class">.el</span> {
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">20px</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">20px</span>;<span class="hljs-attribute">background-color</span>:purple;
+    <span class="hljs-comment">/* useCssTransform */</span>
+    <span class="hljs-attribute">transition</span>: transform .<span class="hljs-number">3s</span>;
+}
+<span class="hljs-selector-class">.options</span>{<span class="hljs-attribute">font-size</span>:<span class="hljs-number">12px</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">8em</span>;<span class="hljs-attribute">width</span>:<span class="hljs-number">20em</span>;}
+</code></pre></div>
+</div>
+
+    <div class="face-one-code  ">
+                        <div class="face-one-code-F-view">
+                            <div class="face-one-code-example">
+                                <div id="example__basic"></div>
+                            </div>
+                            <div class="face-one-code-info">
+                                <div class="face-one-code-info-title">基础定位</div>
+                                <div class="face-one-code-info-desc">
+                                    <p>将 <code>el</code> 定位到 <code>target</code> 左上角</p>
+                                </div>
+                                <span class="face-one-code-info-switchCode fi fi-code"></span>
+                            </div>
+                        </div>
+                        <div class="face-one-code-source">
+                            <div class="face-one-code-source-tool">
+                                <span class="face-one-code-source-tool-copy fi fi-files-o"></span>
+                            </div>
+                            <pre><code class="lang-js"><span class="hljs-selector-tag">var</span> <span class="hljs-attribute">position</span> = require(<span class="hljs-string">'face-position'</span>)
+<span class="hljs-comment">// </span>
+<span class="hljs-comment">// position({</span>
+<span class="hljs-comment">//     el: document.getElementById('el1'),</span>
+<span class="hljs-comment">//     target: document.getElementById('target1')</span>
+<span class="hljs-comment">// })</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// document.getElementById('set').addEventListener('submit', function (e) {</span>
+<span class="hljs-comment">//     e.preventDefault()</span>
+<span class="hljs-comment">//     var json = document.getElementById('options').value</span>
+<span class="hljs-comment">//     var options = JSON.parse(json)</span>
+<span class="hljs-comment">//     options.el = document.getElementById('el1')</span>
+<span class="hljs-comment">//     options.target = document.getElementById('target1')</span>
+<span class="hljs-comment">//     options.useCssTransform = true</span>
+<span class="hljs-comment">//     options.onAlign = function onAlign (positionition, el, target, offsetParent) {</span>
+<span class="hljs-comment">//         console.log(positionition)</span>
+<span class="hljs-comment">//         // positionition.left = positionition.left + 10</span>
+<span class="hljs-comment">//         return positionition</span>
+<span class="hljs-comment">//     }</span>
+<span class="hljs-comment">//     position(options)</span>
+<span class="hljs-comment">// })</span>
+
+<span class="hljs-selector-tag">var</span> box = document.createElement(<span class="hljs-string">'div'</span>)
+box<span class="hljs-selector-class">.style</span><span class="hljs-selector-class">.width</span> = <span class="hljs-string">'20px'</span>
+box<span class="hljs-selector-class">.style</span><span class="hljs-selector-class">.height</span> = <span class="hljs-string">'20px'</span>
+box<span class="hljs-selector-class">.style</span><span class="hljs-selector-class">.backgroundColor</span> = <span class="hljs-string">'orange'</span>
+document<span class="hljs-selector-class">.body</span><span class="hljs-selector-class">.appendChild</span>(box)
+
+<span class="hljs-attribute">position</span>({
+    el: box,
+    target: document.getElementById(<span class="hljs-string">'wrap1'</span>)
+})
+
+</code></pre>
+                        </div>
+                        
+                    </div>
+                                
+<h2 id="defaultProps" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/position/#defaultProps"><span class="markrun-anchor-link"></span></a>defaultProps</h2>
+    <div class="face-one-code  face-one-code--open ">
+                        <div class="face-one-code-F-view">
+                            <div class="face-one-code-example">
+                                
+                            </div>
+                            <div class="face-one-code-info">
+                                <div class="face-one-code-info-title">defaultProps</div>
+                                <div class="face-one-code-info-desc">
+                                    
+                                </div>
+                                <span class="face-one-code-info-switchCode fi fi-code"></span>
+                            </div>
+                        </div>
+                        <div class="face-one-code-source">
+                            <div class="face-one-code-source-tool">
+                                <span class="face-one-code-source-tool-copy fi fi-files-o"></span>
+                            </div>
+                            <pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">baseOn</span>: {
+            <span class="hljs-comment">// "left/center/right top/center/bottom"</span>
+                el: <span class="hljs-string">'left top'</span>,
+            <span class="hljs-comment">// "left/center/right top/center/bottom"</span>
+            target: <span class="hljs-string">'left top'</span>
+        },
+        <span class="hljs-attr">onAlign</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">position, el, target, offsetParent</span>) </span>{
+            <span class="hljs-comment">// position.left = position.left + 10</span>
+            <span class="hljs-keyword">return</span> position
+        },
+        <span class="hljs-attr">useCssTransform</span>: <span class="hljs-literal">true</span>,
+    }
+}
+
+</code></pre>
+                        </div>
+                        
+                    </div>
+                                
+<h2 id="注意事项" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/position/#注意事项"><span class="markrun-anchor-link"></span></a>注意事项</h2><p><code>face-position</code> 并没有监听窗口改变或dom改变时改变位置,如果你有这样的需求,请自行监听
+<code>onresize</code> .遇到极端情况需要定时定位时一定要使用 <code>requestAnimFrame</code></p></div>
+</div>
+</div>
+</div>
+<script>
+Array.from(document.querySelectorAll('.face-one-nav-item-label')).forEach(function (node) {
+    if (node.href) {
+        var pathname = node.href.replace(/\?.*/, '')
+        if (pathname === location.origin + location.pathname + location.hash) {
+            node.setAttribute('class', node.getAttribute('class') + ' ' + 'face-one-nav-item-label--on')
+        }
+    }
+})
+var faceOneGetParent = function faceOneGetParent (el, className) {
+   if (el.parentNode.nodeName.toLowerCase() === 'html') {
+       return null
+   }
+   var parentClassName = el.parentNode.getAttribute('class')
+   var classNames = ''
+   if (parentClassName) {
+       classNames = parentClassName.split(' ')
+   }
+   if (classNames.indexOf(className) !== -1) {
+       return el.parentNode
+   }
+   else {
+       return faceOneGetParent(el.parentNode, className)
+   }
+}
+Array.from(document.querySelectorAll('.face-one-nav-item-group-item')).forEach(function (node) {
+    addAvativeClass(node)
+    function addAvativeClass (node)  {
+        if (node.href) {
+            var pathname = node.href.replace(/\?.*/, '')
+            if (pathname === location.origin + location.pathname + location.hash) {
+                node.setAttribute('class', node.getAttribute('class') + ' ' + 'face-one-nav-item-group-item--on')
+                var parentNode = faceOneGetParent(node, 'face-one-nav-item--group')
+                if (parentNode) {
+                    parentNode.setAttribute('class', parentNode.getAttribute('class') + ' ' + 'face-one-nav-item--group-on')
+                }
+            }
+        }
+    }
+
+})
+</script>
+<div class="face-one-foot">
+    <div class="face-one-foot-F-inner">
+        <div class="face-one-foot-group">
+            <div class="face-one-foot-group-title">
+                <span class="face-one-foot-group-title-icon fi fi-github"></span>
+                Github
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://github.com/onface/position" class="face-one-foot-group-item-link">position</a>
+                - 项目源码
+            </div>
+        </div>
+        <div class="face-one-foot-group">
+            <div class="face-one-foot-group-title">
+                <span class="face-one-foot-group-title-icon fi fi-link"></span>
+                相关站点
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://onface.github.io/component-spec">component-spec</a>
+                - 组件规范
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://github.com/onface/module" class="face-one-foot-group-item-link">module</a>
+                - 开源项目脚手架
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="http://onface.cc/" class="face-one-foot-group-item-link">onface.cc</a>
+                - 资源集合
+            </div>
+        </div>
+        <div class="face-one-foot-group">
+            <div class="face-one-foot-group-title">
+                <span class="face-one-foot-group-title-icon fi fi-team"></span>
+                社区
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://github.com/onface/position/issues" class="face-one-foot-group-item-link">Github issues</a>
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://github.com/onface/position/issues/new" class="face-one-foot-group-item-link">提交bug</a>
+            </div>
+        </div>
+        <div class="face-one-foot-copyright">
+            <a href="../index.html" class="face-one-foot-copyright-title">
+                <img src="theme/media/logo.svg" class="face-one-foot-copyright-title-logo" />
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="theme/jquery.js"></script>
+<script>delete window.$</script>
+<script src="theme/face/face.js" ></script>
+<script data-markrun-lastrun="true">
+                        document.write('<scri' + 'pt src="./basic.demo.js?v=0.2.0"' + '" ></sc' + 'ript>')
+                        </script><script data-markrun-lastrun="true">
+                        document.write('<scri' + 'pt src="../lib/defaultProps.js?v=0.2.0"' + '" ></sc' + 'ript>')
+                        </script></body>
+</html>
