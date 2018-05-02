@@ -6,8 +6,6 @@ position({
 })
 
 
-
-
 document.getElementById('set').addEventListener('submit', function (e) {
     e.preventDefault()
     var json = document.getElementById('options').value
