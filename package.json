@@ -1,7 +1,7 @@
 {
     "name": "face-position",
     "main": "lib/index.js",
-    "version": "0.2.0",
+    "version": "0.3.1",
     "description": "dom position",
     "keywords": "",
     "scripts": {
@@ -18,10 +18,11 @@
     "$username": "onface",
     "$repository": "position",
     "dependencies": {
-        "util.react": "^1.4.1",
-        "prop-types": "^15.6.0"
+
     },
     "devDependencies": {
+        "util.react": "^1.4.1",
+        "prop-types": "^15.6.0",
         "babel": "^6.23.0",
         "babel-core": "^6.26.0",
         "babel-loader": "^7.1.2",
