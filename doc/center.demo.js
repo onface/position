@@ -60,56 +60,25 @@
 /******/ 	__webpack_require__.p = "/position/0.4.1";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./doc/basic.demo.js":
+/***/ "./doc/center.demo.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var position = __webpack_require__("./lib/index.js");
-
 position({
-    el: document.getElementById('el1'),
-    target: document.getElementById('target1')
-});
-
-document.getElementById('set').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var json = document.getElementById('options').value;
-    var options = JSON.parse(json);
-    options.el = document.getElementById('el1');
-    options.target = document.getElementById('target1');
-    options.useCssTransform = true;
-    options.onPosition = function onPosition(postion, el, target, offsetParent) {
-        console.log(postion);
-        console.log({
-            elWidth: el.$overallWidth,
-            elHeight: el.$overallHeight,
-            targetWidth: target.$overallWidth,
-            targetHeight: target.$overallHeight
-        });
-        return {
-            x: 0,
-            y: 0
-        };
-    };
-    position(options);
-});
-
-var box = document.createElement('div');
-box.style.width = '20px';
-box.style.height = '20px';
-box.style.backgroundColor = 'orange';
-document.body.appendChild(box);
-
-position({
-    el: box,
-    target: document.getElementById('wrap1')
+    el: document.getElementById('centerEl'),
+    target: document.getElementById('centerTarget'),
+    baseOn: {
+        el: 'center',
+        target: 'center'
+    }
 });
 
 /***/ }),
@@ -435,10 +404,10 @@ module.exports = function extend() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./doc/basic.demo.js");
+module.exports = __webpack_require__("./doc/center.demo.js");
 
 
 /***/ })
