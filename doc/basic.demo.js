@@ -13,10 +13,18 @@ document.getElementById('set').addEventListener('submit', function (e) {
     options.el = document.getElementById('el1')
     options.target = document.getElementById('target1')
     options.useCssTransform = true
-    options.onAlign = function onAlign (positionition, el, target, offsetParent) {
-        console.log(positionition)
-        // positionition.left = positionition.left + 10
-        return positionition
+    options.onPosition = function onPosition (postion, el, target, offsetParent) {
+        console.log(postion)
+        console.log({
+            elWidth: el.$overallWidth,
+            elHeight: el.$overallHeight,
+            targetWidth: target.$overallWidth,
+            targetHeight: target.$overallHeight,
+        })
+        return {
+            x:0,
+            y:0
+        }
     }
     position(options)
 })

@@ -73,8 +73,51 @@
 }
 ````
 
+## center
+
+````html
+<div id="centerTarget" style="border:1px solid red;">
+abc
+<div id="centerEl" style="width:100px;height:100px;background-color:rgba(124,124,141, 0.2)" >
+
+</div>
+</div>
+````
+
+````code
+{
+    title: 'center',
+    html: '',
+    desc: '',
+    js: './center.demo.js',
+    source: './center.demo.js'
+}
+````
 
 ## 注意事项
 
 `face-position` 并没有监听窗口改变或dom改变时改变位置,如果你有这样的需求,请自行监听
-`onresize` .遇到极端情况需要定时定位时一定要使用 `requestAnimFrame`
+`onresize` .遇到极端情况需要实时定位时一定要使用 `requestAnimationFrame`
+
+## onresize
+
+```js
+window.addEventListener('resize', function () {
+    position({
+        el: document.getElementById('el1'),
+        target: document.getElementById('target1')
+    })
+})
+```
+
+## requestAnimationFrame
+
+```js
+requestAnimationFrame(function callee () {
+    position({
+        el: document.getElementById('el1'),
+        target: document.getElementById('target1')
+    })
+    requestAnimationFrame(callee)
+})
+```
