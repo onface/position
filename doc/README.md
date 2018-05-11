@@ -7,7 +7,7 @@
 <div class="wrap" id="wrap1" >
     <div class="targetWrap">
         <br />
-        <div id="target1" class="target"  ></div>    
+        <span id="target1" class="target"  >target</span>
         <div style="width:600px;height:600px;overflow:hidded;background-color:rgba(1,1,1,.1);" ></div>
     </div>
     <div id="el1" class="el" ></div>
@@ -16,7 +16,7 @@
 <textarea class="options" id="options">{
     "baseOn":{
         "el": "left top",
-        "target": "left top"
+        "target": "left bottom"
     }
 }</textarea>
 <button type="submit" >Set</button>
