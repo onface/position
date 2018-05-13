@@ -10,7 +10,7 @@
         <span id="target1" class="target"  >target</span>
         <div style="width:600px;height:600px;overflow:hidded;background-color:rgba(1,1,1,.1);" ></div>
     </div>
-    <div id="el1" class="el" ></div>
+    <div id="el1" class="el" >el</div>
 </div>
 <form id="set">
 <textarea class="options" id="options">{
@@ -37,12 +37,15 @@
     padding:50px;position:relative;
 }
 .target {
+    opacity: .8;
     width:100px;height:100px;background-color:skyblue;
     border:1px solid pink;
     border-width: 1px 2px 3px 4px;
 }
 .el {
-    width:20px;height:20px;background-color:purple;
+    opacity: .8;
+    width:30px;height:30px;
+    background-color:purple;
     /* useCssTransform */
     transition: transform .3s;
 }
