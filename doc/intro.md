@@ -2,13 +2,81 @@
 
 > 使用一个组件或模块之前，应当知道它能解决的问题是什么，不能解决的问题是什么。使用的最佳实践是什么？
 
-<!--
-示例：
+在 CSS 中我们经常使用 `position` 实现页面布局。CSS 的定位是以上一个 `position` 值不为 `static` 的元素作为基准定位。
 
-`button.react` 实现了按钮常见的视觉风格，实心、空心、虚线、禁用、加载中、按钮组、图标按钮。默认提供了三种尺寸。
 
-但是不同项目的按钮视觉风格都不一样，不可能项目中直接使用 `button.react` 提供的样式。所以 `button.react` 提供了自定义样式的方式。通过修改格式清晰的 `less` 文件改变视觉风格。只需要修改几个变量，就可以与使用者项目中的按钮样式一致。
+````html
+<div style="position:relative;border:1px solid skyblue;width:100px;height:100px;" >
+    relative
+    <div style="position:absolute;bottom:0;right:0;border:1px solid orange" >absolute</div>
+</div>
+````
 
-并且提供了优雅的 API，使用者不需要重新设计调用按钮的 API。常见的按钮类型 `button.react` 都已考虑到。
+CSS定位需要查找上下级关系实现。但有些情况下我们做不到元素 `el` 是目标 `target` 的子孙节点。
 
--->
+使用 `face-positon` 可以实现将元素定位到任意 DOM 的指定位置。
+
+
+```js
+var positon = require('face-position')
+positon({
+    el: document.getElementById('el'),
+    target: document.getElementById('target'),
+    baseOn: {
+        el: 'left top',
+        target: 'center'
+    }
+})
+```
+
+````html
+<div id="target" style="width:3.5em;height:3.5em;background-color:skyblue;opacity:.5;" >target</div>
+<div id="el" style="width:3.5em;height:3.5em;background-color:yellow;opacity:.5;" >el</div>
+````
+
+<script src="./intro.demo.js"></script>
+
+## 重新定位时机
+
+face-position 并没有监听窗口改变或 DOM 改变时改变位置,如果你有这样的需求,请自行监听 `onresize` 。
+
+### onresize
+
+```js
+window.addEventListener('resize', function () {
+    position({
+        el: document.getElementById('el'),
+        target: document.getElementById('target')
+    })
+})
+```
+
+遇到极端情况需要实时定位时一定要使用 `requestAnimationFrame`。
+
+### requestAnimationFrame
+
+```js
+requestAnimationFrame(function callee () {
+    position({
+        el: document.getElementById('el'),
+        target: document.getElementById('target')
+    })
+    requestAnimationFrame(callee)
+})
+```
+
+### react.componentDidUpdate
+
+React 等框架可生命周期中每次渲染完成后重新定位。
+
+```js
+componentDidUpdate () {
+    position({
+        el: self.props.$refs.root,
+        target: self.props.target
+    })
+}
+```
+
+
+**[更多使用方法](./README.md)**
