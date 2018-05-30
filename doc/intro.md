@@ -69,6 +69,8 @@ requestAnimationFrame(function callee () {
 
 React 等框架可生命周期中每次渲染完成后重新定位。
 
+> React 中请使用 [position.react](https://onface.github.io/position.react/)
+
 ```js
 componentDidUpdate () {
     position({

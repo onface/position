@@ -2,7 +2,7 @@
     "name": "face-position",
     "main": "lib/index.js",
     "version": "0.4.3",
-    "description": "dom position",
+    "description": "DOM position",
     "keywords": "",
     "scripts": {
         "dev": "rm -rf output && fis3 release -w -d ./output -r ./ -f compile/fis-conf.js",
