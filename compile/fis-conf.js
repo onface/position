@@ -9,6 +9,9 @@ var compileConfig = require('../compile')
 var isAbsoluteUrl = require('is-absolute-url')
 var userConfig = require('../compile')
 var ejs = require('ejs')
+var extend = require('extend')
+var codesandboxDefine = require('codesandbox/lib/api/define')
+var getParameters = codesandboxDefine.getParameters
 fis.hook(require('fis3-hook-relative'))
 fis.match('**', {
     relative: true
@@ -98,13 +101,52 @@ if (fis.project.currentMedia() !== 'npm') {
                             settings.desc = settings.desc || ''
                             settings.title = settings.title || path.parse(filePath).name
                             settings.html = settings.html || ''
-                            settings.horiz = settings.horiz || false
+                            settings.side = typeof settings.side === 'undefined'? false: settings.side
+                            settings.run = typeof settings.run === 'undefined'? true: settings.run
+                            settings.files = settings.files || []
                             code = code.replace(/\/\*ONFACE-DEL\*\/.*/g, '')
+                            var neatCode = code
                             code = markrun.markdownParserHighlight(code, 'js')
+
+                            var parametersSettings = {
+                                files: {
+                                    'index.html': {
+                                        content: settings.html
+                                    },
+                                    'index.js': {
+                                        content: neatCode
+                                    },
+                                    'package.json': {
+                                        content: {
+                                            dependencies: extend(true, iPackage.dependencies, iPackage.optionalDependencies, {
+                                                [iPackage.name]: iPackage.version
+                                            })
+                                        }
+                                    }
+                                }
+                            }
+                            settings.files.forEach(function (item) {
+                                var filePath= path.join(info.file.dirname, item)
+                                parametersSettings.files[item] = {
+                                    content: fs.readFileSync(filePath).toString()
+                                }
+                            })
+                            var scriptCode
+                            if (fis.project.currentMedia() === 'dev') {
+                                scriptCode = `
+                                <script data-markrun-lastrun="true">
+                                document.write('<scri' + 'pt src="${settings.source}?v=${iPackage.version}"' + '" ></sc' + 'ript>')
+                                </script>
+                                `
+                            }
+                            else {
+                                scriptCode = `<script data-markrun-lastrun="true" src="${settings.source}?v=${iPackage.version}"></script>`
+                            }
+                            var parametersData = getParameters(parametersSettings)
                             return {
                                 lang: 'replace',
                                 code: `
-    <div class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.horiz?' face-one-code--horiz':''}">
+    <div class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.run?' face-one-code--run':''} ${settings.side?' face-one-code--side':''}">
                         <div class="face-one-code-F-view">
                             <div class="face-one-code-example">
                                 ${settings.html}
@@ -114,18 +156,25 @@ if (fis.project.currentMedia() !== 'npm') {
                                 <div class="face-one-code-info-desc">
                                     ${markrun(settings.desc, {template: '<%- content %>'})}
                                 </div>
-                                <span class="face-one-code-info-switchCode fi fi-${settings.horiz?'ellipsis':'code'}"></span>
+                                <span class="face-one-code-info-switchCode fi fi-${settings.side?'ellipsis':'code'}"></span>
                             </div>
                         </div>
-                        <div class="face-one-code-source">
+                        <div class="face-one-code-source"  >
                             <div class="face-one-code-source-tool">
-                                <span class="face-one-code-source-tool-copy fi fi-files-o"></span>
+                                ${
+                                    settings.run?
+                                    `<form class="face-one-code-source-tool-preview" action="https://codesandbox.io/api/v1/sandboxes/define" method="post" target="_blank" >
+                                        <input type="hidden" name="parameters" value="${parametersData}">
+                                        <button type="submit" class="fi fi-edit face-one-code-source-tool-preview-submit" ></button>
+                                    </form>`:''
+                                }
+                                <span class="face-one-code-source-tool-copy fi fi-copy"></span>
                             </div>
                             ${code}
                         </div>
-                        <script data-markrun-lastrun="true">
-                        document.write('<scri' + 'pt src="${settings.js}?v=${iPackage.version}"' + '" ></sc' + 'ript>')
-                        </script>
+                        ${
+                            settings.run?scriptCode:''
+                        }
                     </div>
                                 `
                             }
@@ -228,11 +277,17 @@ if (fis.project.currentMedia() === 'npm') {
             }
         ]
     })
+    fis.match('doc/**.vue', {
+        parse:[]
+    })
+    fis.match('doc/{**.js,**.vue:js}', {
+        parse: []
+    })
     fis.match('**.demo.js', {
         parser: []
     })
     fis.match('**.vue', {
-        rExt: 'js',
+        rExt: 'vue',
         useSameNameRequire: true,
         parser: [
             fis.plugin('vue-component', {

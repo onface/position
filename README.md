@@ -14,6 +14,19 @@
     <div class="face-one-intro-tool">
         <a href="https://onface.github.io/position" class="face-one-intro-btn face-one-intro-btn--primary mr-online-hide" >在线文档</a>
         <!-- MARKRUN-HTML
+                <div class="face-one-readmedemo">
+                    <div class="face-one-readmedemo-node">
+                        <div id="simple-demo" class="face-one-readmedemo-node-render"></div>
+                    </div>
+                </div>
+                <script data-markrun-lastrun="true">
+                ;(function(){
+                    var  date = new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDate()
+                    document.write('<scri' + 'pt src="./doc/simple.demo.js?v="' + date + '" ></sc' + 'ript>')
+                }())
+                </script>
+            -->
+        <!-- MARKRUN-HTML
             <a href="./doc/intro.md" class="face-one-intro-btn face-one-intro-btn--primary">指引</a>
             <a href="http://github.com/onface/position" class="face-one-intro-btn">GITHUB</a>
         -->
@@ -50,7 +63,7 @@
     </table>
 </div>
 
-<div class="face-one-face-one-feature-title">
+<div class="face-one-feature-title">
     Creator
 </div>
 <div class="face-one-feature face-one-feature--creator">
