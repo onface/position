@@ -37,7 +37,7 @@
         <tr>
             <td align="center" >
                 <div class="face-one-feature-item">
-                    <img src="./doc/theme/media/cogwheel.svg" alt="" class="face-one-feature-item-photo">
+                    <img src="https://onface.live/design/media/nice/dev.svg" alt="" class="face-one-feature-item-photo">
                     <br />
                     <div class="face-one-feature-item-label">定制开发</div>
                     <div class="face-one-feature-item-desc">提供底层接口便于二次开发</div>
@@ -45,7 +45,7 @@
             </td>
             <td align="center" >
                 <div class="face-one-feature-item">
-                    <img src="./doc/theme/media/browser.svg" alt="" class="face-one-feature-item-photo">
+                    <img src="https://onface.live/design/media/seo/share.svg" alt="" class="face-one-feature-item-photo">
                     <br />
                     <div class="face-one-feature-item-label">接口简洁</div>
                     <div class="face-one-feature-item-desc">配置项目多单接口简洁易用</div>
@@ -53,7 +53,7 @@
             </td>
             <td align="center" >
                 <div class="face-one-feature-item">
-                    <img src="./doc/theme/media/share.svg" alt="" class="face-one-feature-item-photo">
+                    <img src="https://onface.live/design/media/nice/nice.svg" alt="" class="face-one-feature-item-photo">
                     <br />
                     <div class="face-one-feature-item-label">动画过渡</div>
                     <div class="face-one-feature-item-desc">定位过程平滑自然</div>
@@ -64,7 +64,7 @@
 </div>
 
 <div class="face-one-feature-title">
-    Creator
+    维护者
 </div>
 <div class="face-one-feature face-one-feature--creator">
     <table style="width:100%;" data-comments="In order to github typesetting so use the table tag" >
