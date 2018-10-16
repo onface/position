@@ -1,7 +1,37 @@
 # 文档
 
-## 对齐定位
+## center
 
+````html
+<div id="centerTarget" style="border:1px solid red;">
+    abc
+    <div id="centerEl" style="width:100px;height:100px;background-color:rgba(124,124,141, 0.2)" ></div>
+</div>
+````
+
+````code
+{
+    title: 'center',
+    html: '',
+    desc: '',
+    run: './center.demo.js',
+    open: true
+}
+````
+
+## defaultProps
+
+````code
+{
+    title: 'defaultProps',
+    html: '',
+    desc: '',
+    open: true,
+    source: '../lib/defaultProps.js'
+}
+````
+
+## 输入测试
 
 ````html
 <div class="wrap" id="wrap1" >
@@ -21,6 +51,15 @@
 }</textarea>
 <button type="submit" >Set</button>
 </form>
+````
+
+````code
+{
+    title: '基础定位',
+    html: '<div id="example__basic"></div>',
+    desc: '将 `el` 定位到 `target` 左上角',
+    run: './basic.demo.js'
+}
 ````
 
 
@@ -52,50 +91,6 @@
 .options{font-size:12px;height:8em;width:20em;}
 ````
 
-
-````code
-{
-    title: '基础定位',
-    html: '<div id="example__basic"></div>',
-    desc: '将 `el` 定位到 `target` 左上角',
-    js: './basic.demo.js',
-    source: './basic.demo.js'
-}
-````
-
-## defaultProps
-
-````code
-{
-    title: 'defaultProps',
-    html: '',
-    desc: '',
-    open: true,
-    js: '../lib/defaultProps.js',
-    source: '../lib/defaultProps.js'
-}
-````
-
-## center
-
-````html
-<div id="centerTarget" style="border:1px solid red;">
-abc
-<div id="centerEl" style="width:100px;height:100px;background-color:rgba(124,124,141, 0.2)" >
-
-</div>
-</div>
-````
-
-````code
-{
-    title: 'center',
-    html: '',
-    desc: '',
-    js: './center.demo.js',
-    source: './center.demo.js'
-}
-````
 
 ## 注意事项
 

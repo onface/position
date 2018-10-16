@@ -5,6 +5,7 @@ position({
     target: document.getElementById('target1')
 })
 
+console.log('1')
 
 document.getElementById('set').addEventListener('submit', function (e) {
     e.preventDefault()
